@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Коробка </title>
+    <link rel="stylesheet" href="{% static 'css/стильок.css' %}">
+</head>
+<body class="body">
+    <a href="{% url 'logout' %}" class="exit">exit</a>
+    <div class = 'forimage'>
+        <div class="container">
+            <div class="card card_one">КАРТОЧКА 1</div>
+            <div class="card card_two">КАРТОЧКА 2</div>
+            <div class="card card_three">КАРТОЧКА 3</div>
+            <div class = 'image'>
+            <img class = 'image1' src = "{% static 'pictures/картинка.jpg' %}" alt = 'зря.'> 
+            <img class = 'image2' src = "{% static 'pictures/котики.jpg' %}" alt = 'зря.'> 
+            <img class = 'image3' src = "{% static 'pictures/котики2.jpg' %}" alt = 'зря.'> 
+        </div>
+    </div>
+</body>
+</html>

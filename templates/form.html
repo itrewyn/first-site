@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Форма </title>
+        <link rel="stylesheet" href="{% static 'css/form_style.css' %}">
+    </head>
+<body class="body">
+        
+<form method="post" action="action={% url 'register' %}">
+    {% csrf_token %}
+    <div class="container">
+        <h2 class="sing_up_title">SING UP</h2>
+        
+{% if error %}
+  <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+        <div class="email"><label for="email"> email: </label> </div> <br>
+        <input type="email" class="email_input" id="email" name="email" required><br>
+        <label for="password" class="password"> password: </label><br>
+        <input type="password" class="password_input" id="password" name="password" required><br>
+        <input type="submit" class = 'sign_up' value="sign up">
+        {% if show_login_link %}
+            <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+        {% endif %}
+    </div>
+</form>
+</body>
+</html>
